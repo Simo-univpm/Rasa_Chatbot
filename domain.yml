@@ -1,0 +1,275 @@
+version: "3.0"
+
+intents:
+  - saluti
+  - conferma_recap
+  - conferma_ordine
+  - conferma
+  - negazione    
+  - start
+  - stop
+  - intent_felice
+  - inizio_form_ordine
+  - informazioni_ordine
+
+
+responses:
+  utter_saluti:
+  - text: "Ciao! Come posso esserti utile?"
+
+  utter_start:
+  - text: "Benvenuto! Sono il chatbot di DS Informatica! \n
+           Tocca il bottone qui sotto o chiedimi qualsiasi cosa!"
+    buttons:
+    - title: "Nuovo ordine"
+      payload: "ordina"
+  
+  utter_stop:
+  - text: "Arrivederci e grazie per averci contattato!"
+
+  utter_ask_continua_form:
+  - text: "Vuoi uscire dal form?"
+    buttons:
+    - title: "Si"
+      payload: "si"
+    - title: "No"
+      payload: "no"
+   
+  utter_felice:
+  - text: "Alla grande! Mi sento pronto per darti una mano!"
+
+  utter_inizio_form:
+  - text: "Benvenuto nella sezione ordini!\nDi seguito verranno richiesti i dati per effettuare l'ordine"
+  
+  utter_recap_ordine:
+  - text: "L'ordine è il seguente"
+ 
+  utter_submit:
+  - text: "L'ordine è stato inoltrato!"
+
+  utter_uscita_form:
+  - text: "Sei uscito dalla sezione ordine!"
+
+  utter_ask_circuito:
+  - text: "Che circuito ha la tua carta?"
+    buttons:
+    - title: "VISA"
+      payload: "visa"
+    - title: "MASTERCARD"
+      payload: "mastercard"
+    - title: "VISA MASTERCARD"
+      payload: "visa mastercard"
+    - title: "JCB"
+      payload: "jcb"
+    - title: "CHINA UNION PAY"
+      payload: "china union pay"
+    - title: "DINERS"
+      payload: "diners"
+    - title: "AMERICAN EXPRESS"
+      payload: "american express"
+
+  utter_ask_numero_carta:
+  - text: "Inserisci il numero della carta"
+
+  utter_ask_pagamento:
+  - text: "Inserisci il metodo di pagamento che desideri utilizzare"
+
+  utter_ask_intestatario_carta:
+  - text: "Inserisci l'intestatario della carta"
+
+  utter_ask_cvv:
+  - text: "Inserisci il cvv della tua carta"
+
+  utter_ask_scadenza:
+  - text: "Inserisci la data di scadenza della carta"
+
+  utter_ask_nome_prodotto:
+  - text: "Inserisci il prodotto che vuoi acquistare"
+    buttons:
+    - title: "Apple MacBook Air 13 \", 256 GB SSD, 8GB RAM"
+      payload: "Macbook Pro 16 M1"
+    - title: "ASUS F515JA-BR1892T 15,6 \" Intel Core i3"
+      payload: "ASUS F515JA-BR1892T"
+    - title: "ACER-A114-33-C28D"
+      payload: "ACER-A114-33-C28D"
+
+  utter_ask_quantita:
+  - text: "Quanti ne vuoi acquistare?"
+
+  utter_ask_email:
+  - text: "Inserisci la tua e-mail"
+
+  utter_ask_numero_telefono:
+  - text: "Inserisci il tuo numero di cellulare"
+
+  utter_ask_indirizzo_spedizione:
+  - text: "Inserisci l'indirizzo di spedizione"
+
+  utter_ask_citta:
+  - text: "Inserisci la città"
+
+  utter_ask_cap:
+  - text: "Inserisci il CAP"
+    
+  utter_ask_conferma_recap:
+  - text: "Vuoi un recap dell'ordine?"
+    buttons:
+    - title: "Si"
+      payload: "si_recap"
+    - title: "No"
+      payload: "no_recap"
+
+  utter_ask_conferma_ordine:
+  - text: "Vuoi confermare l'ordine?"
+    buttons:
+    - title: "Si"
+      payload: "si_ordine"
+    - title: "No"
+      payload: "no_ordine"
+
+
+entities:
+- circuito
+- metodo_pagamento
+- numero_carta
+- intestatario_carta
+- scadenza
+- cvv
+- nome_prodotto
+- quantita  
+- email
+- numero_telefono
+- indirizzo_spedizione
+- citta
+- cap
+- conferma_recap
+- conferma_ordine
+- conferma
+- negazione
+
+slots:
+  circuito:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: circuito
+  
+  numero_carta:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: numero_carta   
+  
+  intestatario_carta:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: intestatario_carta    
+
+  scadenza:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: scadenza    
+  
+  cvv:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: cvv
+
+  
+  nome_prodotto:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: nome_prodotto    
+  
+  quantita:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: quantita    
+  
+  email:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: email
+
+  numero_telefono:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: numero_telefono
+  
+  indirizzo_spedizione:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: indirizzo_spedizione  
+  
+  citta:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: citta
+
+  cap:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: cap
+
+  conferma_recap:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: conferma_recap
+
+  conferma_ordine:
+    type: text
+    influence_conversation: true
+    mappings:
+    - type: from_entity
+      entity: conferma_ordine          
+
+forms:
+  form_ordine:
+    required_slots:
+      - nome_prodotto
+      - circuito      
+      - numero_carta
+      - intestatario_carta
+      - scadenza
+      - cvv
+      - quantita
+      - email
+      - numero_telefono
+      - indirizzo_spedizione
+      - citta
+      - cap
+      - conferma_recap
+      - conferma_ordine
+
+
+actions:
+- validate_form_ordine
+- action_reset
+
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true

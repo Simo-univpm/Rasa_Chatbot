@@ -1,0 +1,23 @@
+version: "3.0"
+
+stories:
+- story: percorso_felice
+  steps:
+  - intent: saluti
+  - action: utter_saluti
+  - intent: intent_felice
+  - action: utter_felice
+
+- story: l'utente non continua il form ordine
+  steps:
+  - intent: inizio_form_ordine
+  - action: utter_inizio_form
+  - action: form_ordine
+  - active_loop: form_ordine
+  - intent: stop
+  - action: utter_ask_continua_form
+  - or:
+    - intent: stop
+    - intent: conferma
+  - action: action_deactivate_loop  
+  - active_loop: null

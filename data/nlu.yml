@@ -1,0 +1,587 @@
+version: "3.0"
+nlu:
+- intent: start
+  examples: |
+    - start
+    - init
+- intent: stop
+  examples: |
+    - stop
+    - chiudi form
+    - chiudi
+    - quit
+- intent: saluti
+  examples: |
+    - ciao
+    - hey
+    - ei
+    - buonasera
+    - buongiorno
+    - salve
+    - buon pomeriggio
+    - buona serata
+    - eilà
+
+- intent: negazione
+  examples: |
+    - no
+    - assolutamente no
+    - annulla
+
+- intent: conferma
+  examples: |
+    - si
+    - conferma
+    - yes
+    - affermo
+
+- intent: conferma_recap
+  examples: |
+    - si_recap
+    - s_recap
+    - yes_recap
+    - certo_recap
+    - ovvio_recap
+    - confermo_recap
+    - va bene_recap
+    - ottimo_recap
+    - no_recap
+    - n_recap
+    - nego_recap
+    - annullo_recap
+    - annulla_recap
+    - rifiuta_recap
+    - rifiuto_recap
+- intent: conferma_ordine
+  examples: |
+    - si_ordine
+    - s_ordine
+    - yes_ordine
+    - certo_ordine
+    - ovvio_ordine
+    - confermo_ordine
+    - va bene_ordine
+    - ottimo_ordine
+    - no_ordine
+    - n_ordine
+    - nego_ordine
+    - annullo_ordine
+    - annulla_ordine
+    - rifiuta_ordine
+    - rifiuto_ordine
+
+- intent: intent_felice
+  examples: |
+    - come stai?
+    - come va?
+    - come va la vita?
+    - come butta?
+
+- intent: inizio_form_ordine
+  examples: |
+    - compra
+    - ordina
+    - acquista
+    - vorrei acquistare un nuovo PC
+    - voglio comprare un nuovo computer
+    - voglio comprare un mac
+    - voglio comprare un portatile
+    - come faccio ad acquistare?
+    - come si acquista un computer?
+    - come si acquista un PC?
+    - come si acquista un portatile?
+    - come si acquista un mac?
+    - come si inizia un ordine?
+    - voglio ordinare un pc
+    - voglio ordinare un mac
+    - voglio ordinare un portatile
+- intent: informazioni_ordine
+  examples: |
+    - Il circuito è [visa](circuito)
+    - Il circuito della mia carta è [mastercard](circuito)
+    - [visa](circuito)
+    - Ho una carta [jcb](circuito)
+
+    - il numero della carta è [3542 2356 6543 5643](numero_carta)
+    - [3242 9900 6543 5321](numero_carta)
+    - [3242990065435321](numero_carta)
+    - carta [1234567891011121](numero_carta)
+
+    - L'intestatario della carta è [Compagnoni Paolo](intestatario_carta)
+    - La carta è intestata a nome di [Silveri Nicola](intestatario_carta)
+    - La carta è intestata a [Onori Simone](intestatario_carta)
+    - [Compagnoni Paolo](intestatario_carta)
+
+    - il mio cvv è [976](cvv)
+    - [462](cvv)
+    - cvv [669](cvv)
+
+    - La scadenza della carta è [03/23](scadenza)
+    - [05/24](scadenza)
+    - La carta scade il [11/24]
+
+    - [macbook pro 16 M1](nome_prodotto)
+    - [ASUS F515JA-BR1892T](nome_prodotto)
+    - E' disponibile un [macbook pro 16 M1](nome_prodotto)?
+    - E' possibile acquistare un [macbook pro 16 M1](nome_prodotto)?
+
+    - [1](quantita)
+    - Ne voglio acquistare [2](quantita)
+    - Ne voglio [4](quantita)
+
+    - [compagnonipaolo95@gmail.com](email)
+    - La mia email è [segreteria@univpm.it](email)
+    - la mail è [amurphy@hotmail.com](email)
+
+    - il mio numero di telefono è [+393407015008](numero_telefono)
+    - il mio telefono è [3397619766](numero_telefono)
+    - numero di telefono [339 6504882](numero_telefono)
+    - il mio numero di cellulare è [+393283550125](numero_telefono)
+    - il mio cellulare è [329 6554126](numero_telefono)
+    - numero di cellulare [3354501894](numero_telefono)
+    - [339 7619766](numero_telefono)
+    - [3397619766](numero_telefono)
+
+    - [Viale piane san donato 33](indirizzo_spedizione) [Venezia](citta)
+    - [Viale piane san donato 33](indirizzo_spedizione) [Venezia](citta)
+    - [Via Gentile 23](indirizzo_spedizione) [Padova](citta)
+    - [Viale dei pini 123](indirizzo_spedizione) [Napoli](citta)
+    - [Piazza Centrale 34](indirizzo_spedizione) [Palermo](citta)
+    - Il mio indirizzo è [Via Roma 349](indirizzo_spedizione) [Napoli](citta)
+    - Il mio indirizzo è [Piazza del combattente 1](indirizzo_spedizione) [Genova](citta)
+    - Abito in [Viale dei fiori 1234](indirizzo_spedizione) [Bologna](citta) [34323](cap)
+    - Abito in [Via volpetti 23](indirizzo_spedizione) [Bologna](citta)
+    - Abito in [Via Kennedy 13](indirizzo_spedizione)
+
+    - [Viale piane san donato 33](indirizzo_spedizione) [Venezia](citta) [34323](cap)
+    - [Viale piane san donato 33](indirizzo_spedizione) [Venezia](citta) [64012](cap)
+    - [Via Gentile 23](indirizzo_spedizione) [Padova](citta) [54345](cap)
+    - [Viale dei pini 123](indirizzo_spedizione) [Napoli](citta) [34534](cap)
+    - [Piazza Centrale 34](indirizzo_spedizione) [Palermo](citta) [76566](cap)
+    - Il mio indirizzo è [Via Roma 349](indirizzo_spedizione) [Napoli](citta) [45434](cap)
+    - Il mio indirizzo è [Piazza del combattente 1](indirizzo_spedizione) [Genova](citta) [64234](cap)
+    
+
+    - la mia citta è [Firenze](citta)
+    - [Roma](citta)
+
+    - [64013](cap)
+    - Il CAP è [23045](cap)
+
+    - [si_recap](conferma_recap)
+    - [conferma_recap](conferma_recap)
+    - [no_recap](conferma_recap)
+    - [annullo_recap](conferma_recap)
+    - [si_ordine](conferma_ordine)
+    - [conferma_ordine](conferma_ordine)
+    - [no_ordine](conferma_ordine)
+    - [annullo_ordine](conferma_ordine)
+
+    - [si](conferma)
+    - [conferma](conferma)
+
+    - [no](negazione)
+    - [annulla](negazione)
+
+- lookup: circuito
+  examples: |
+    - visa
+    - mastercard
+    - china union pay
+    - diners
+    - diners club
+    - jcb
+    - visa mastercard
+
+- lookup: numero_carta
+  examples: |
+    - 3242 9900 6543 5321
+    - 2998 3234 2342 5234
+    - 4535 4323 7652 5463
+    - 3194 2435 3452 4564
+    - 4562 2456 2456 2245
+    - 4188 1909 2724 4579
+    - 4253 2396 0336 1940
+    - 4160 8524 5088 9383
+    - 4911 1420 2275 7751
+    - 4607 4397 1406 9050
+    - 4086 4660 8048 5719
+    - 4660 4228 2160 9251
+    - 4046 5701 4726 8247
+    - 4752 1070 6446 7488
+    - 4532 9915 7779 9033
+
+    - 5349 1545 5330 9679
+    - 5521 5866 3640 5026
+    - 5246 4932 5003 7900
+    - 5368 0454 0509 5134
+    - 5187 0470 5264 1243
+    - 5445 2438 0689 0024
+    - 5416 9645 5280 0843
+    - 5511 6693 6055 2544
+    - 5477 6558 3513 9076
+    - 5283 1116 5382 4096
+
+    - 3488 3484 5610 453
+    - 3446 9610 6143 142
+    - 3782 4142 3658 081
+    - 3498 7139 1735 143
+    - 3492 0793 1254 479
+    - 3474 2560 1221 923
+    - 3498 8035 8874 316
+    - 3740 2399 7452 701
+    - 3440 1120 6720 916
+    - 3472 4998 0844 349
+
+    - 3539 5443 0786 1584
+    - 3569 2419 1447 5774
+    - 3588 3544 5118 2120
+    - 3558 3916 2275 2916
+    - 3548 2609 5186 4829
+    - 3589 2968 8398 2255
+    - 3558 4301 4262 4484
+    - 3579 2993 6685 7574
+    - 3588 6087 1562 4353
+    - 3589 0342 9885 6164
+
+    - 38461863448890
+    - 36421515628010
+    - 5881728593995300
+    - 36453550611031
+    - 38551579506245
+    - 36041573123454
+    - 36842591756492
+    - 5269458094098527
+    - 38226868405330
+    - 5116112398004252
+
+    - 6238333905976945
+    - 6257653646724712913
+    - 6208783411128241
+    - 624923064412331247
+    - 6235236312219150
+    - 620551739995825735
+    - 6264503731698635
+    - 6200626955624756203
+    - 62620175944686772
+    - 62620175944686772
+    - 6236502818252663
+
+- lookup: cap
+  examples: |
+    - 64013
+    - 32456
+    - 43356
+
+- lookup: intestatario_carta
+  examples: |
+    - Simone Onori
+    - John J. Smith
+    - R. J. Tannen
+    - Beef Tannen
+    - Marty McFly
+    - Simone Francalancia
+    - Nicola Silveri
+    - GIUSEPPE MUSSO
+    - MARIA CERRATO
+    - ANDREA SEFEROVIC
+    - MARCO FERRERO
+    - FRANCESCO VIARENGO
+    - ALESSANDRO CONTI
+    - GIOVANNI FASSIO
+    - ROBERTO BIANCO
+    - LUCA GALLO
+    - ANTONIO ROSSO
+    - PAOLO RAVIOLA
+    - ANNA AMERIO
+    - FRANCESCA TORCHIO
+    - DAVIDE NEGRO
+    - MATTEO MARINO
+    - GIULIA GRASSO
+    - MARIO BARBERO
+    - LUIGI GRAZIANO
+    - FABIO HOXHA
+    - PAOLA GAMBA
+    - STEFANO PALUMBO
+    - SALVATORE PENNA
+    - DANIELA RUSSO
+    - LORENZO BINELLO
+    - ELENA NOSENZO
+    - MASSIMO RISSONE
+    - CHIARA FERRARIS
+    - SARA BRUNO
+    - GIUSEPPINA SARACCO
+    - LAURA MONTICONE
+    - GIORGIO MORRA
+    - RICCARDO CARBONE
+    - ANNA FRANCO
+    - SIMONE PAVESE
+    - SILVIA MARELLO
+    - ROSA MARMO
+    - VALENTINA BOSIA
+    - ANGELA RISSO
+    - ALBERTO PEROSINO
+    - CLAUDIO SERRA
+    - VINCENZO FALCONE
+    - FRANCO ROSSI
+    - CARLO LOMBARDO
+    - ELISA RIZZO
+    - MAURIZIO AVIDANO
+    - MARTINA BRIGNOLO
+    - GIOVANNA BORIO
+    - FEDERICO MAGGIORA
+    - PATRIZIA FORNACA
+    - SIMONA VALENTE
+    - MAURO MONTRUCCHIO
+    - GABRIELE BOANO
+    - ANGELO SCHILLACI
+    - CRISTINA TRINCHERO
+    - CARLA FORNO
+    - PIETRO COTTO
+    - ALESSIA BEGANOVIC
+    - LUCIA CESTARI
+    - MONICA LONGO
+    - RITA GAI
+    - DANIELE ARRI
+    - SILVANA GONELLA
+    - GIORGIA BOSTICCO
+    - BARBARA ACCORNERO
+    - MATTIA BOERO
+    - DOMENICO VALPREDA
+    - MICHELE SCOZZARO
+    - STEFANIA COSTA
+    - BRUNO LAZZARO
+    - MARCO ROSSI
+
+- regex: numero_carta
+  examples: |
+    - ^4[0-9]{12}(?:[0-9]{3})?$
+    - ^(?:4[0-9]{12}(?:[0-9]{3})?|5[1-5][0-9]{14})$
+    - ^3(?:0[0-5]|[68][0-9])[0-9]{11}$
+    - ^(5[1-5][0-9]{14}|2(22[1-9][0-9]{12}|2[3-9][0-9]{13}|[3-6][0-9]{14}|7[0-1][0-9]{13}|720[0-9]{12}))$
+    - ^(?:2131|1800|35\d{3})\d{11}$
+    - ^(62[0-9]{14,17})$
+
+- regex: cvv
+  examples: |
+    - ^\d{3}$
+
+- regex: quantita
+  examples: |
+    - ^\d{1,2}$
+
+- regex: scadenza
+  examples: |
+    - ^(0[1-9]|1[0-2])\/?([0-9]{2})$
+
+- regex: indirizzo_spedizione
+  examples: |
+    - ^\s*\S+(?:\s+\S+){2}
+
+- regex: email
+  examples: |
+    - ^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$
+
+- regex: numero_telefono
+  examples: |
+    - ^((00|\+)39[\. ]??)??3\d{2}[\. ]??\d{6,7}$
+
+- regex: cap
+  examples: |
+    - ^\d{5}$
+
+- lookup: email
+  examples: |
+    - compagnonipaolo95@gmail.com
+    - segreteria@univpm.it
+    - presidenza@univpm.it
+    - maltenwerth@hotmail.com
+    - scorwin@jacobson.info
+    - tkulas@yahoo.com
+    - urban19@stokes.org
+    - kailee10@gmail.com
+    - amurphy@hotmail.com
+    - bauch.rylee@yahoo.com
+    - elva57@dickinson.org
+    - ari79@schuppe.com
+    - pearlie00@hotmail.com
+    - garfield58@anderson.com
+    - agreenholt@greenfelder.com
+    - vhowe@rohan.com
+    - geraldine65@howe.com
+    - hodkiewicz.florine@hotmail.com
+    - keith.beer@yahoo.com
+    - jerel.ebert@stracke.biz
+    - roman.cartwright@blick.com
+    - kolby74@gmail.com
+    - goodwin.kaitlyn@yahoo.com
+    - huels.alejandrin@dare.org
+    - al.block@gmail.com
+    - stevie79@hotmail.com
+    - monserrate.hintz@yahoo.com
+    - alysa99@gmail.com
+    - scottie34@hotmail.com
+    - rsatterfield@lind.com
+    - hintz.mellie@erdman.com
+    - sid51@skiles.biz
+    - walter.florence@gmail.com
+    - albert44@larson.net
+    - leuschke.leora@gmail.com
+    - lester62@keeling.com
+    - ruecker.pamela@hotmail.com
+    - yesenia.wyman@donnelly.com
+    - vblanda@hotmail.com
+    - orin82@gmail.com
+    - beatty.peter@eichmann.info
+    - name.buckridge@hotmail.com
+    - eve22@yahoo.com
+    - lakin.trisha@eichmann.com
+    - alisha.frami@moen.com
+    - rreichel@hotmail.com
+    - tara13@crooks.com
+    - boyer.brionna@gmail.com
+    - devin53@lubowitz.com
+    - brock.turner@hotmail.com
+    - nikolaus.furman@langosh.org
+    - preston50@gmail.com
+    - dkris@douglas.info
+
+- lookup: indirizzo_spedizione
+  examples: |
+    - Via dei pini 43
+    - Via Firenze 12
+    - Piazza martiri 123
+    - Contrada Egisto 01
+    - Rotonda Ricci 34
+    - Via Erminia 0 Piano 8
+    - Contrada lucente 4
+    - Piazza Quasimodo 1
+    - Incrocio Lisa 464
+    - Via Ruth 710
+    - Contrada Bortolo 449
+    - Strada Furio 589
+    - Via Arcibaldo 096
+    - Borgo Mariani 170
+    - Rotonda Lino 0
+    - Borgo Celeste 901
+    - Piazza Helga 318
+    - Contrada Carmela 0
+    - Contrada Erminia 26
+    - Borgo Palmieri 761
+    - Piazza Martini 164
+    - Via Matilde 5
+    - Borgo Loretta 6
+    - Rotonda Vitalba 7
+    - Incrocio Davide 23
+    - Rotonda Maika 808
+    - Piazza Marino 540
+    - Incrocio Farina 575
+    - Contrada Esposito 04
+    - Borgo Costa 39
+    - Incrocio Assia 54
+    - Via Barbieri 78
+    - Contrada Gastone 29
+    - Borgo Battaglia 2
+    - Incrocio Naomi 27
+    - Incrocio Damico 6
+    - Incrocio Harry 9
+    - Borgo Rossi 7
+    - Strada Cleopatra 279
+    - Via Santoro 2
+    - Rotonda Neri 49
+    - Strada Irene 831
+    - Via Gentile 31
+    - Borgo De luca 83
+    - Piazza Barbieri 9
+    - Via Fernando 270
+    - Contrada Pagano 61
+    - Piazza Akira 60
+    - Contrada Palumbo 4
+    - Strada Neri 2
+    - Strada Giuliani 8
+    - Via Gavino 36
+    - Contrada Violante 8
+
+- lookup: scadenza
+  examples: |
+    - 03/23
+    - 01/22
+    - 09/23
+    - 04/24
+    - 10/23
+    - 12/25
+    - 11/24
+    - 02/25
+
+
+- lookup: citta
+  examples: |
+    - Roma
+    - Milano
+    - Napoli
+    - Torino
+    - Palermo
+    - Genova
+    - Bologna
+    - Firenze
+    - Bari
+    - Catania
+    - Venezia
+    - Verona
+    - Messina
+    - Padova
+    - Trieste
+    - Taranto
+    - Brescia
+    - Parma
+    - Prato
+    - Modena
+    - Reggio Calabria
+    - Reggio Emilia
+    - Perugia
+    - Ravenna
+    - Livorno
+    - Cagliari
+    - Foggia
+    - Rimini
+    - Salerno
+    - Ferrara
+    - Sassari
+    - Latina
+    - Giugliano in Campania
+    - Monza
+    - Siracusa
+    - Pescara
+    - Bergamo
+    - Forlì
+    - Trento
+    - Vicenza
+    - Terni
+    - Bolzano
+    - Novara
+    - Piacenza
+    - Ancona
+    - Andria
+    - Arezzo
+    - Udine
+    - Cesena
+    - Lecce
+
+- lookup: nome_prodotto
+  examples: |
+    - notebook Lenovo i5 decima generazione 8 gb RAM 500gb SSD
+    - macbook pro 16 M1
+    - notebook ASUS i7 undicesima generazione 16 gb RAM 1tb SSD
+
+- lookup: quantita
+  examples: |
+    - 1
+    - 2
+    - 3
+    - 4
+    - 5
+    - 6
+    - 7
+    - 8
+    - 9
+    - 10

@@ -1,0 +1,34 @@
+version: "3.0"
+
+rules:
+
+- rule: messaggio_introduttivo
+  steps:
+  - intent: start
+  - action: utter_start
+
+- rule: attiva_form_ordine
+  steps:
+  - intent: inizio_form_ordine
+  - action: utter_inizio_form
+  - action: form_ordine
+  - active_loop: form_ordine
+
+- rule: submit_form_ordine
+  condition:
+  - active_loop: form_ordine
+  steps:
+  - action: form_ordine
+  - active_loop: null
+  - slot_was_set:
+    - requested_slot: null  
+  - action: action_reset
+
+- rule: Interruption_form_ordine
+  condition:
+  - active_loop: form_ordine
+  steps:
+  - intent: intent_felice
+  - action: utter_felice
+  - action: form_ordine
+  - active_loop: form_ordine
